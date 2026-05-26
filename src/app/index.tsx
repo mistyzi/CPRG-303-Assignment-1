@@ -1,17 +1,32 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
-    </View>
+    <ScrollView style={styles.container}>
+
+      {/* Header */}
+      <View style={styles.header}>
+        <Text style={styles.title}>OOTD Everyday</Text>
+        <Text style={styles.handle}>@ootd_everyday</Text>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    padding: 20,
+    backgroundColor: "#fff"
+  },
+  header: {
+    marginBottom: 10,
+  },
+    title: {
+    fontSize: 14,
+    fontWeight: "bold",
+  },
+  handle: {
+    fontSize: 12,
+    color: "#555",
   },
 });
