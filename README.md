@@ -1,2 +1,2 @@
 # Instagram Mobile App Clone 
-  Built with Expo and React Native
+- Built with Expo and React Native
