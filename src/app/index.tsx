@@ -47,17 +47,31 @@ export default function Index() {
       </View>
 
       {/* Photo Grid */}
+      <View style={{marginHorizontal: -20}}>
       <View style={styles.grid}>
-        {/* Placeholder for photos */}
+        {[
+          "https://images.unsplash.com/photo-1603217192412-c933ccfac0fa?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1619042823674-4f4ad8484b08?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://plus.unsplash.com/premium_photo-1669138520397-9147a0a55fff?q=80&w=685&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1700026883924-b7cf6f300747?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1707302919663-b6a3f72530b6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://plus.unsplash.com/premium_photo-1695575576052-7c271876b075?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1623682536941-2fadcc797b09?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1737491220179-ef20cfb2497a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ].map((uri, index) => (
+          <Image key={index} source={{ uri }} style={styles.gridImage} />
+        ))}
       </View>
-
+      </View>
     </ScrollView >
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    paddingTop: 20,
+    paddingHorizontal: 20,
     backgroundColor: "#fff"
   },
   header: {
@@ -85,34 +99,33 @@ const styles = StyleSheet.create({
   profileRow: {
     flexDirection: "row",
     alignItems: "center",
+    marginBottom: 12,
+    gap: 14,
     marginTop: 20,
   },
   profilePic: {
-    width: 70,
-    height: 70,
-    borderRadius: 35,
-    marginRight: 15
+    width: 75,
+    height: 75,
+    borderRadius: 36,
   },
   profileTextContainer: {
-    marginTop: 10,
+    marginTop: 1,
   },
   username: {
-    fontSize: 16,
-    fontWeight: "500",
-    marginBottom: 2,
+    fontSize: 15,
+    fontWeight: "600",
   },
   bio: {
     fontSize: 13,
+    fontWeight: "400",
     marginTop: 2,
     lineHeight: 18,
-    color: "#555",
+    color: "#262626",
   },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginBottom: 6,
     width: "70%",
-    marginLeft: 10,
   },
   box: {
     alignItems: 'center'
@@ -122,9 +135,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   label: {
-    fontSize: 16,
-    color: "#555",
-    marginTop: -4,
+    fontSize: 12,
+    fontWeight: "400",
+    color: "#737373",
+    marginTop: -2,
   },
   dropdown: {
     marginTop: 20,
@@ -138,13 +152,20 @@ const styles = StyleSheet.create({
   dropdownText: {
     fontSize: 14,
     textAlign: "center",
-    fontWeight: "bold",
+    fontWeight: "500",
   },
   grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    marginTop: 20,
+    marginTop: 15,
+    paddingHorizontal: 0,
+    paddingBottom: 40,
+  },
+  gridImage: {
+    width: '33.1%',
+    aspectRatio: 1,
+    borderRadius: 2,
   },
 
 });
